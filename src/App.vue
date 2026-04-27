@@ -1,10 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>You did it!</h1>
+  <h1 class="text-xl text-green-900 font-bold">You did it!</h1>
   <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
+    Tailwind Instalado!
   </p>
 </template>
 
