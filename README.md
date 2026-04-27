@@ -51,7 +51,11 @@ Dentro del main.css que creamos insertamos la siguiente linea
 </body>
 
 </html>
+```
+
 5. Probamos si las clases de tailwind estan funcionando modificando alguno de nuestros componentes
+
+``` html
 <!-- /scr/App.vue -->
 <script setup lang="ts"></script>
 
