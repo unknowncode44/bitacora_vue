@@ -1,42 +1,68 @@
-# bitacora_vue
+Guía de la Rama tailwind_css (Actualizada con @tailwindcss/vite)
+En esta rama, integramos Tailwind CSS para el estilizado de la aplicación, utilizando el plugin oficial para Vite. A continuación se detallan los pasos que se siguieron, basados en la documentación oficial.
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+1. Instalación de Dependencias
+Primero, instalamos las dependencias de desarrollo necesarias.
+``` bash
+npm install -D tailwindcss @tailwindcss/vite postcss autoprefixer
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+2. Modificamos el archivo vite config
+``` ts
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite' //<-- insertamos esta linea
+export default defineConfig({
+  plugins: [
+    //...
+    tailwindcss(), // insertamos esta linea dentro de plugins
+  ],
+})
 ```
 
-### Type-Check, Compile and Minify for Production
+3. Creamos un archivo css en la raiz de nuestro proyecto e importamos tailwindcss
+``` bash
+touch main.css
+```
 
-```sh
-npm run build
+Dentro del main.css que creamos insertamos la siguiente linea
+
+``` css
+@import "tailwindcss";
+```
+
+4. Importamos nuestro archivo main.css en el index.html raiz de nuestro proyecto
+
+``` html
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <!-- insertamos aqui nuestra referencia a main.css -->
+  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
+5. Probamos si las clases de tailwind estan funcionando modificando alguno de nuestros componentes
+<!-- /scr/App.vue -->
+<script setup lang="ts"></script>
+
+<template>
+    <!-- insertamos clases tailwind para ver si funciona -->
+    <h1 class="text-2xl text-emerald-950">Tailwind</h1>
+    <p class="text-emerald-500">
+        Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
+        documentation
+    </p>
+</template>
+
+<style scoped></style>
 ```
