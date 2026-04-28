@@ -81,3 +81,5 @@ Primero vamos a crear una carpeta para nuestros composables dentro de src. y den
 
 Empecemos con la logica propia del componente app.ts, peroo primerooo me olvide de subir la rama de funcionalidad, vamos a hacerlo ahora!
 
+listo! vamos a ver nuestro App.vue y ver como hacemos para seguir.
+
