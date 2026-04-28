@@ -70,3 +70,14 @@ Dentro del main.css que creamos insertamos la siguiente linea
 
 <style scoped></style>
 ```
+
+Esta aplicacion de vue esta donde la dejamos, es decir ya tenemos la estructura HTML pero sin funcionalidad. Ya copie los modelos de nuestro proyecto de react, ahora voy a crear el archivo types.ts dentro de la carpeta models para que luego los podamos usar a traves de nuestra aplicacion.
+
+Listo creamos los modelos! Ahora solo tenemos que empezar con nuestra logica, como vue al igual que react es compatible con typescript, solo tenemos que copiar nuestro archivo de calculos de react. Primero creo un archivo calculation.ts dentro de la carpeta utils.
+
+Vue a diferencia de react que usa Hooks, usa algo llamado composables, que en escencia son lo mismo. Vamos a crear uno para poder usar nuestra logica ordenadamente.
+
+Primero vamos a crear una carpeta para nuestros composables dentro de src. y dentro un archivo "useCalculations.ts". Creado nuestro composable esta listo para funcionar!
+
+Empecemos con la logica propia del componente app.ts, peroo primerooo me olvide de subir la rama de funcionalidad, vamos a hacerlo ahora!
+
